@@ -1,31 +1,25 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from './supabaseClient';
 
 async function getRandomFilmUUID() {
-  const { data } = await supabase
-    .from('films')
-    .select('id');
-
+  const { data } = await supabase.from('films').select('id');
   const randomIndex = data && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
-
   return data && data.length > 0 ? data[randomIndex].id : null;
 }
 
 const Navigation = () => {
   const location = useLocation();
-  const [uuid, setUuid] = useState<string | null>(null);
+  const navigate = useNavigate(); // 👈 використовуй useNavigate для внутрішньої навігації
 
   const isActive = (path: string) => location.pathname === path;
 
   const handleRandomLinkClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault(); 
+    e.preventDefault(); // не дай <Link> перейти самостійно
 
     try {
       const randomUUID = await getRandomFilmUUID();
       if (randomUUID) {
-        setUuid(randomUUID); 
-        window.location.href = `/FilmDetail/${randomUUID}`; 
+        navigate(`/FilmDetail/${randomUUID}`); // 👈 без перезавантаження
       }
     } catch (error) {
       console.error('Error fetching random film UUID:', error);
@@ -37,11 +31,11 @@ const Navigation = () => {
       <Link className={`btn ${isActive('/') ? 'active' : ''}`} to="/">Головна</Link>
       <Link className={`btn ${isActive('/release') ? 'active' : ''}`} to="/release">Анонси</Link>
       <Link className={`btn ${isActive('/schedule') ? 'active' : ''}`} to="/schedule">Розклад</Link>
-      
-      <Link 
-        className={`btn ${location.pathname.startsWith('/FilmDetail') ? 'active' : ''}`} 
-        to={`/FilmDetail/${uuid ?? ''}`}
-        onClick={handleRandomLinkClick}
+
+      <Link
+        className={`btn ${location.pathname.startsWith('/FilmDetail') ? 'active' : ''}`}
+        to="#"
+        onClick={handleRandomLinkClick} // 👈 не використовуй to={`/FilmZone/...`}
       >
         Випадкове
       </Link>

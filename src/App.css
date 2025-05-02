@@ -58,12 +58,11 @@ aside {
 section {
   width: 60vw;
   height: auto;
-  min-height: 83vw;
 }
 .general {
   background-color: #ffff ;
   width: 100%;
-  height: auto;
+  min-height: 83.5vw;
 }
 .main-part {
   display: flex;
@@ -350,17 +349,20 @@ margin-left: 0.8vw;
 border-radius: 0.4vw;
 font-size: 2vw;
 }
-.btn-pag {
-  width: 1.4vw;
-  height: 1.4vw;
-}
+
 .btn-pag-left {
   rotate: 180deg;
+  
+}
+.btn-pag {
+height: 1vw;
+width: 1vw;
 }
 .btn-marg {
   margin:0 0.1vw ;
-  width: 1.4vw;
-  height: 1.4vw;
+  width: 1.7vw;
+  height: 1.7vw;
+  font-size: 1vw;
 }
 @media (max-width: 750px) {
   header a {
@@ -375,6 +377,9 @@ font-size: 2vw;
   section {
     width: 70vw;
   }
+.general {
+  min-height: 125vw;
+}
   .btn {
     padding: 1vw 2.57vw;
     font-size: 3vw;

@@ -11,6 +11,7 @@ type Film = {
   banner: string;
   category: string;
   year: number;
+  entitle: string;
 };
 
 function Aside() {
@@ -49,7 +50,7 @@ function Aside() {
     const response = await supabase
       .from('films')
       .select('*')
-      .or(`title.ilike.%${searchTerm}%,category.ilike.%${searchTerm}%`)
+      .or(`title.ilike.%${searchTerm}%,entitle.ilike.%${searchTerm}%`)
       .limit(searchBannerNumber);
 
     if (response.error) {

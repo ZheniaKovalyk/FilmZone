@@ -210,7 +210,7 @@ const Release = () => {
 
         <div className="pagination">
           <button className='btn-marg' onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))} disabled={currentPage === 1}>
-            <img className='btn-pag btn-pag-left' src="../chevron-right-solid.svg" alt="" />
+            <img className='btn-pag btn-pag-left' src="chevron-right-solid.svg" alt="" />
           </button>
 
           {[...Array(totalPages)].map((_, idx) => {
@@ -227,7 +227,7 @@ const Release = () => {
           })}
 
           <button className='btn-marg' onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))} disabled={currentPage === totalPages}>
-            <img className='btn-pag' src="../chevron-right-solid.svg" alt="" />
+            <img className='btn-pag' src="chevron-right-solid.svg" alt="" />
           </button>
         </div>
       </div>
