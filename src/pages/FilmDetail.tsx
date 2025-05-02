@@ -118,7 +118,7 @@ const FilmDetail = () => {
         <div className="sands">
 
             <div className="online"><h3>Дивитися онлайн "{film.title}"</h3></div> 
-          <div className={seasons.length < 2 ? 'invisible-style' : ''} >
+          <div className={seasons.length < 2 ? 'invisible-style' : 'season'} >
             {seasons.map(season => (
               <button
                 key={season}

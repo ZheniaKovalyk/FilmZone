@@ -34,15 +34,15 @@ header {
 }
 
 .logo {
-height: 50px;
+height: 48px;
 width: auto ;
 display: flex;
 position: absolute;
-top: 0;
-left: 30px;
+top: 1px;
+left: 30px;         
 }
 .logo-name {
-  font-family: none;
+  font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: 4vw;
   font-weight: 1;
@@ -306,14 +306,16 @@ footer {
   display: flex;
   justify-content: space-between;
     align-items: center;
-    margin-top: 0.5vw;
+    margin: 0.5vw 0 0 0;
     position: relative;
-    padding: 0 2.5vw;
+    padding: 0 2.5vw ;
+
+
 }
 .footer-tt {
   color: white;
 font-size: 1.5vw;
-font-family: none;
+font-family: 'Times New Roman', Times, serif;
 }
 .law {
   position: absolute;
@@ -364,52 +366,106 @@ width: 1vw;
   height: 1.7vw;
   font-size: 1vw;
 }
-@media (max-width: 750px) {
+
+.search-header {
+  display: none;
+}
+.season {
+  margin-bottom: 0.5vw;
+}
+
+@media (max-width: 550px) {
   header a {
     font-size: 2vw;
+  }
+  header {
+    height: 35px;
   }
   .logo-name {
     font-size: 6vw;
   }
+  .logo {
+    height: 33px;
+    top: 1px;
+    left: 15px;         
+  }
   aside {
-    width: 30vw;
+    display: none;
   }
   section {
     width: 70vw;
   }
 .general {
-  min-height: 125vw;
+  min-height: 100vh;
+  width: 100vw;
+}
+.detail {
+justify-content: space-between;
+padding: 0.5vw 1.5vw 0.5vw 1.5vw;
 }
   .btn {
-    padding: 1vw 2.57vw;
-    font-size: 3vw;
+    padding: 1vw 4.15vw;
+    font-size: 4vw;  
   }
-  .img, .posters, .posters-img, .img-as {
+  .btn-all {
+    display: flex;
+    margin-left: 0.6vw;
+    }
+  .posters, .posters-img, .img-as {
+    width: 47.4vw;
+    height: 78vw;
+  }
+  .img {
     width: 25vw;
-    height: 40vw; 
-  }
+    height: 40vw;
+    margin-right: 4vw;
+  } 
   .table, .describe, .p-title, .s-title {
     font-size: 2vw;
   }
+.describe {
+  width: 97vw;
+
+}
+  .btn-marg
+  {
+    width: 3.5vw;
+    height: 3.5vw;
+    font-size: 2vw;
+    margin: 0px 0.4vw
+  }
   .player {
-    width: 65.5vw;
-    height: 37vw;
+    width: 92.5vw;
+    height: 53vw;
+  }
+  .sands {
+    width: 97vw;
   }
   .search {
-    width: 30vw;
     height: 6vw;
-  }
+    border-radius: 5px;
+position: absolute;
+right: 15px;
+}
   .search-form input {
     font-size: 2vw;
+    border-radius: 4px;
   }
   .s-img {
     width: 5vw;
     height: 7vw;
   }
+.sort-title {
+  font-size: 3vw;
+  margin: 0.5vw 0 0.5vw 0.5vw;
+  padding: 1vw 1.5vw;
+  width: 32vw;
+}
+  
   .filter-btn, .filter-btn-active {
   padding: 0.5vw 1.7vw;
   margin: 0.5vw 0.5vw 0vw 0.5vw;
-  font-size: 1.4vw;
+  font-size: 3vw;
 border-radius: 1vw;
   }
   .category-buttons, .sort-btn {
@@ -417,13 +473,13 @@ border-radius: 1vw;
   }
 
   .hearts-in-eyes {
-    width: 67.7vw;
-    height: 36vw;
-    margin-left: 1vw;
+    width: 96vw;
+    height: 52vw;
+    margin-left: 0;
   }
   .img-heart {
     width: 45vw;
-    height: 33.8vw;
+    height: 49vw;
 
 }
 .post-ul {
@@ -431,8 +487,27 @@ border-radius: 1vw;
 }
 
 .day {
-margin-left: 2vw;
-width: 96.5%;
+  margin-left: 1vw;
+  width: 99%;
 font-size: 3vw;
+}
+.main-part {
+  justify-content: start;
+}
+.github {
+  height: 3.5vw;
+}
+footer {
+  height: 35px;
+  padding: 0 1vw;
+
+}
+.search-header {
+  display: block;
+  z-index: 4;
+}
+.btn-pag {
+  height: 2vw;
+  width: 2vw;
 }
 }
