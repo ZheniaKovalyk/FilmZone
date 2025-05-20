@@ -48,7 +48,7 @@ const FilmDetail = () => {
     const fetchData = async () => {
       const [filmRes, episodesRes] = await Promise.all([
         supabase.from('films').select('*').eq('id', id).single(),
-        supabase.from('mainly').select('*').eq('film_id', id)
+        supabase.from('mainly').select('*').eq('film_id', id).order('series')
       ]);
 
       if (filmRes.data) setFilm(filmRes.data);
@@ -111,8 +111,7 @@ const FilmDetail = () => {
         <p className="describe">{film.describe}</p>
 
         <div className="player">
-          <div className="barrier"></div>
-          <iframe src={`https://drive.google.com/file/d/${selectedEpisode}/preview`} width="100%" height="100%" allow="autoplay" title="Film Player" allowFullScreen/>
+          <iframe src={`https://1drv.ms/v/c/${selectedEpisode}`} width="100%" height="100%"  scrolling="no" allowFullScreen/>
         </div>
 
         <div className="sands">

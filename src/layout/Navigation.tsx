@@ -33,7 +33,7 @@ const Navigation = () => {
       <Link className={`btn ${isActive('/schedule') ? 'active' : ''}`} to="/schedule">Розклад</Link>
 
       <Link
-        className={`btn ${location.pathname.startsWith('/FilmDetail') ? 'active' : ''}`}
+        className={`btn ${location.pathname.startsWith('/FilmDetail')}`}
         to="#"
         onClick={handleRandomLinkClick} // 👈 не використовуй to={`/FilmZone/...`}
       >
