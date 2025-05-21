@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
-const supabaseUrl = 'https://oppoqieldjzjfknpxkin.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wcG9xaWVsZGp6amZrbnB4a2luIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3ODM1MzEsImV4cCI6MjA2MDM1OTUzMX0.ogqXSNAPEpAPwlJs_6PdiKXk7dOPFhWkhTFK-4ekOXs'; // ❗ Раджу не включати ключі прямо в код
-
+const VITE_SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const VITE_SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
+const supabaseUrl = VITE_SUPABASE_URL;
+const supabaseKey = VITE_SUPABASE_KEY;
 export const supabase = createClient(supabaseUrl, supabaseKey);
